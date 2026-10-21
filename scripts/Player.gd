@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 # --- CHARACTER CONFIGURATION (Customizable per fighter in the Inspector) ---
 @export var character_name: String = "Fighter"
-@export var speed: float = 63.0
+@export var speed: float = 61.0
 @export var jump_velocity: float = -700.0
 @export var gravity_scale: float = 1.0
 

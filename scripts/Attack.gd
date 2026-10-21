@@ -9,11 +9,11 @@ var timer: float = 0.0
 func setup_attack(attack_type: String) -> void:
 	current_attack = attack_type
 	if attack_type == "punch":
-		attack_duration = 0.8 # How long the punch lasts (seconds)
+		attack_duration = 0.5 # How long the punch lasts (seconds)
 		player.animated_sprite.play("punch")
 	elif attack_type == "kick":
-		attack_duration = 0.40 # Kicks usually take a bit longer than punches
-		# player.animated_sprite.play("kick") # Put your kick animation here
+		attack_duration = 0.75 # Kicks usually take a bit longer than punches
+		player.animated_sprite.play("kick")
 
 func enter() -> void:
 	timer = 0.0

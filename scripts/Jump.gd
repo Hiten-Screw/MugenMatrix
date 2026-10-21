@@ -25,9 +25,9 @@ func physics_update(delta: float) -> void:
 
 	# 3. Transitions
 	# Air Attack check
-	if Input.is_action_just_pressed("attack"):
-		player.state_machine.change_state("attack")
-		return
+	#if Input.is_action_just_pressed("attack"):
+	#	player.state_machine.change_state("attack")
+	#	return
 
 	# Landing check
 	if player.is_on_floor():
@@ -37,3 +37,4 @@ func physics_update(delta: float) -> void:
 		else:
 			player.state_machine.change_state("idle")
 		return
+	
