@@ -1,31 +1,40 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1792563875
-::res://assets/::1792504468
-::res://assets/background/::1792504470
-1.webp::CompressedTexture2D::1711798010841028945::1792503773::1792504470::1::::<><><>0<>0<>c38ce461d2bd4712745bd58bb84c14e6<>res://.godot/imported/1.webp-d039caec948185876c73b00c4d67068f.ctex::
-::res://assets/characters/::1792496583
-::res://assets/characters/new folder/::1792516860
-Goku Sprites.png::CompressedTexture2D::7786207446100724678::1792496612::1792496612::1::::<><><>0<>0<>900b36ca37897974206d69c812ec3ff2<>res://.godot/imported/Goku Sprites.png-5057ec5e9e35e04b86c121bc9486d9f4.ctex::
-goku_basic_kick.png::CompressedTexture2D::7788931730844987883::1792506988::1792509301::1::::<><><>0<>0<>b3c50d84fd2aaa0fae65e9fe89d9dde5<>res://.godot/imported/goku_basic_kick.png-306a4eeea0e44a53423bdfa772f8a153.ctex::
-goku_basic_punch.png::CompressedTexture2D::7170117831507843594::1792506862::1792509301::1::::<><><>0<>0<>f9594d3ce053033a1b80ecad37ae51b7<>res://.godot/imported/goku_basic_punch.png-b523f103a7ab7b5be918338d309de5cd.ctex::
-goku_block.png::CompressedTexture2D::8670841950451650289::1792506354::1792506525::1::::<><><>0<>0<>77ca55254d283b353714ea94e3b5b6ca<>res://.godot/imported/goku_block.png-5c446f49bd9b96b7d792cdddf7e63f2b.ctex::
-goku_idle.png::CompressedTexture2D::1488094422789668691::1792498951::1792499096::1::::<><><>0<>0<>50bc12030e308e13ace5e17c50fd5f84<>res://.godot/imported/goku_idle.png-3c3a02cfd4f5eb813a09392e96416fb1.ctex::
-goku_jump.png::CompressedTexture2D::4688783810648137343::1792506435::1792506525::1::::<><><>0<>0<>950500c25dc00e4a80f821f05119e6de<>res://.godot/imported/goku_jump.png-f6e31263a6410d1d05c9842eae8f19a9.ctex::
-goku_move.png::CompressedTexture2D::2085784800235423405::1792505752::1792505760::1::::<><><>0<>0<>d5aeb86bd26b118eff1751bd3da4681f<>res://.godot/imported/goku_move.png-2ff55f21142c33f52c95357e8e0421d9.ctex::
-::res://assets/characters/new folder/punch/::1792517066
-1.png::CompressedTexture2D::7464125984861254304::1792516888::1792517066::1::::<><><>0<>0<>4f4d301369ee9024fe3b820c9eb6055b<>res://.godot/imported/1.png-c2a6c6e346f60d747a60ed82706a45dd.ctex::
-2.png::CompressedTexture2D::8727019907823506486::1792516924::1792517066::1::::<><><>0<>0<>926ab99c5e28ae406a21a259fbf2b0b1<>res://.godot/imported/2.png-715052b36d9505ce6177e30d21879363.ctex::
-3.png::CompressedTexture2D::5397652918777098268::1792517053::1792517066::1::::<><><>0<>0<>3e63e38f4956c912cc1e2e9e8437780c<>res://.godot/imported/3.png-609d1a1cfb535fa954de5e1d3417d995.ctex::
-4.png::CompressedTexture2D::3905459040154634967::1792517012::1792517066::1::::<><><>0<>0<>e797f5bca0b33ba09905498ec66077d0<>res://.godot/imported/4.png-6999abfbb43766e1f0dd64320a42014b.ctex::
-::res://scenes/::1792517809
-game.tscn::PackedScene::2365735530179372918::1792515096::0::1::::<><><>0<>0<><>::uid://hur4bl8fo3k7::::res://scenes/Player.tscn<>uid://ynhce8ytnbsr::::res://assets/background/1.webp
-Player.tscn::PackedScene::533693508470526468::1792517809::0::1::::<><><>0<>0<><>::uid://qxmvg3xer1es::::res://scripts/StateMachine.gd<>uid://vg3xytt00ej0::::res://assets/characters/new folder/goku_idle.png<>uid://bb6iger4l4lbn::::res://scripts/Player.gd<>uid://4ymtn8s3h2cf::::res://assets/characters/new folder/goku_move.png<>uid://b72jt4qf3rglj::::res://assets/characters/new folder/goku_jump.png<>uid://delxcgrcp1kjg::::res://assets/characters/new folder/punch/1.png<>uid://dwlo0iy556b2e::::res://assets/characters/new folder/punch/2.png<>uid://ci5ws4smdvajs::::res://assets/characters/new folder/punch/3.png<>uid://bvv3ls2mqoep0::::res://assets/characters/new folder/punch/4.png
-::res://scripts/::1792517506
-Attack.gd::GDScript::2573184710182081534::1792517506::0::1::::Attack<>State<><>0<>0<><>::
-HitStun.gd::GDScript::6770534829465621980::1792511779::0::1::::HitStun<>State<><>0<>0<><>::
-Idle.gd::GDScript::6151830693507981484::1792512776::0::1::::Idle<>State<><>0<>0<><>::
-Jump.gd::GDScript::5318398810031075180::1792512976::0::1::::Jump<>State<><>0<>0<><>::
-Move.gd::GDScript::6187031167996190533::1792516141::0::1::::Move<>State<><>0<>0<><>::
-Player.gd::GDScript::2521101926101102803::1792516316::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-State.gd::GDScript::706337157238673718::1792512195::0::1::::State<>Resource<><>0<>0<><>::
-StateMachine.gd::GDScript::1171268651582776362::1792513866::0::1::::StateMachine<>Node<><>0<>0<><>::
+::res://::1792580094
+README.md::TextFile::-1::1792564434::0::1::::<><><>0<>0<><>::
+::res://assets/::1792564434
+::res://assets/background/::1792564434
+1.webp::CompressedTexture2D::1711798010841028945::1792564434::1792564434::1::::<><><>0<>0<>c38ce461d2bd4712745bd58bb84c14e6<>res://.godot/imported/1.webp-d039caec948185876c73b00c4d67068f.ctex::
+::res://assets/characters/::1792564434
+::res://assets/characters/new folder/::1792566687
+Goku Sprites.png::CompressedTexture2D::7786207446100724678::1792564434::1792564434::1::::<><><>0<>0<>900b36ca37897974206d69c812ec3ff2<>res://.godot/imported/Goku Sprites.png-5057ec5e9e35e04b86c121bc9486d9f4.ctex::
+goku_basic_kick.png::CompressedTexture2D::7788931730844987883::1792564434::1792564434::1::::<><><>0<>0<>b3c50d84fd2aaa0fae65e9fe89d9dde5<>res://.godot/imported/goku_basic_kick.png-306a4eeea0e44a53423bdfa772f8a153.ctex::
+goku_basic_punch.png::CompressedTexture2D::7170117831507843594::1792564434::1792564434::1::::<><><>0<>0<>f9594d3ce053033a1b80ecad37ae51b7<>res://.godot/imported/goku_basic_punch.png-b523f103a7ab7b5be918338d309de5cd.ctex::
+goku_block.png::CompressedTexture2D::8670841950451650289::1792564434::1792564434::1::::<><><>0<>0<>77ca55254d283b353714ea94e3b5b6ca<>res://.godot/imported/goku_block.png-5c446f49bd9b96b7d792cdddf7e63f2b.ctex::
+goku_idle.png::CompressedTexture2D::1488094422789668691::1792564434::1792564434::1::::<><><>0<>0<>50bc12030e308e13ace5e17c50fd5f84<>res://.godot/imported/goku_idle.png-3c3a02cfd4f5eb813a09392e96416fb1.ctex::
+goku_jump.png::CompressedTexture2D::4688783810648137343::1792564434::1792564434::1::::<><><>0<>0<>950500c25dc00e4a80f821f05119e6de<>res://.godot/imported/goku_jump.png-f6e31263a6410d1d05c9842eae8f19a9.ctex::
+goku_move.png::CompressedTexture2D::2085784800235423405::1792564434::1792564434::1::::<><><>0<>0<>d5aeb86bd26b118eff1751bd3da4681f<>res://.godot/imported/goku_move.png-2ff55f21142c33f52c95357e8e0421d9.ctex::
+::res://assets/characters/new folder/kick/::1792576670
+1.png::CompressedTexture2D::6904956322680948108::1792566708::1792566911::1::::<><><>0<>0<>6610d9ace491a7faa05551f72cbc7362<>res://.godot/imported/1.png-33f7a23fa915e00dad2f0352489a7514.ctex::
+2.png::CompressedTexture2D::6013043145932568045::1792576568::1792576581::1::::<><><>0<>0<>af5fd4bcf4822b54ae95d72c573e02d7<>res://.godot/imported/2.png-7df7affd621d9d750ac07c515ef7e809.ctex::
+3.png::CompressedTexture2D::1540672274197876895::1792566809::1792566911::1::::<><><>0<>0<>0697d1f6d5981c9ea92bef2705b6f80e<>res://.godot/imported/3.png-1da34d1de5a398634e63eac7f0d67be5.ctex::
+4.png::CompressedTexture2D::8294031288309019466::1792576249::1792576453::1::::<><><>0<>0<>fc8c5b01d331c8585d8aa36c42ffa4f1<>res://.godot/imported/4.png-b3a54dfe374a837cf9d92a4cca87f1a9.ctex::
+5.png::CompressedTexture2D::6048884822738144682::1792576648::1792576670::1::::<><><>0<>0<>e357692567c4a294d82a3d0664e2cdc0<>res://.godot/imported/5.png-02bcde6008986d290600d42cbb4e7f64.ctex::
+6.png::CompressedTexture2D::5051954221036879817::1792576305::1792576453::1::::<><><>0<>0<>d4f816435eb0c51d6cc7deb34106a7c0<>res://.godot/imported/6.png-599d62a941b07b89979188a3ac161dfe.ctex::
+::res://assets/characters/new folder/punch/::1792564434
+1.png::CompressedTexture2D::7464125984861254304::1792564434::1792564434::1::::<><><>0<>0<>4f4d301369ee9024fe3b820c9eb6055b<>res://.godot/imported/1.png-c2a6c6e346f60d747a60ed82706a45dd.ctex::
+2.png::CompressedTexture2D::8727019907823506486::1792564434::1792564434::1::::<><><>0<>0<>926ab99c5e28ae406a21a259fbf2b0b1<>res://.godot/imported/2.png-715052b36d9505ce6177e30d21879363.ctex::
+3.png::CompressedTexture2D::5397652918777098268::1792564434::1792564434::1::::<><><>0<>0<>3e63e38f4956c912cc1e2e9e8437780c<>res://.godot/imported/3.png-609d1a1cfb535fa954de5e1d3417d995.ctex::
+4.png::CompressedTexture2D::3905459040154634967::1792564434::1792564434::1::::<><><>0<>0<>e797f5bca0b33ba09905498ec66077d0<>res://.godot/imported/4.png-6999abfbb43766e1f0dd64320a42014b.ctex::
+::res://scenes/::1792577080
+game.tscn::PackedScene::2365735530179372918::1792582664::0::1::::<><><>0<>0<><>::uid://hur4bl8fo3k7::::res://scenes/Player.tscn<>uid://ynhce8ytnbsr::::res://assets/background/1.webp
+Player.tscn::PackedScene::533693508470526468::1792577080::0::1::::<><><>0<>0<><>::uid://qxmvg3xer1es::::res://scripts/StateMachine.gd<>uid://vg3xytt00ej0::::res://assets/characters/new folder/goku_idle.png<>uid://bb6iger4l4lbn::::res://scripts/Player.gd<>uid://4ymtn8s3h2cf::::res://assets/characters/new folder/goku_move.png<>uid://b72jt4qf3rglj::::res://assets/characters/new folder/goku_jump.png<>uid://c5m2ve2sfslpc::::res://assets/characters/new folder/kick/1.png<>uid://delxcgrcp1kjg::::res://assets/characters/new folder/punch/1.png<>uid://dwlo0iy556b2e::::res://assets/characters/new folder/punch/2.png<>uid://crw07bcgauvfp::::res://assets/characters/new folder/kick/2.png<>uid://ci5ws4smdvajs::::res://assets/characters/new folder/punch/3.png<>uid://v7kwah7gdjyt::::res://assets/characters/new folder/kick/3.png<>uid://dqfxqo8jak3i1::::res://assets/characters/new folder/kick/4.png<>uid://bvv3ls2mqoep0::::res://assets/characters/new folder/punch/4.png<>uid://csgeiqfuk0o3s::::res://assets/characters/new folder/kick/5.png<>uid://cd8g7h2cuhii8::::res://assets/characters/new folder/kick/6.png
+::res://scripts/::1792576968
+Attack.gd::GDScript::2573184710182081534::1792576968::0::1::::Attack<>State<><>0<>0<><>::
+HitStun.gd::GDScript::6770534829465621980::1792564434::0::1::::HitStun<>State<><>0<>0<><>::
+Idle.gd::GDScript::6151830693507981484::1792564434::0::1::::Idle<>State<><>0<>0<><>::
+Jump.gd::GDScript::5318398810031075180::1792564434::0::1::::Jump<>State<><>0<>0<><>::
+Move.gd::GDScript::6187031167996190533::1792564434::0::1::::Move<>State<><>0<>0<><>::
+Player.gd::GDScript::2521101926101102803::1792565956::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+block.gd::GDScript::3427213663514086415::1792582664::0::1::::Block<>State<><>0<>0<><>::
+State.gd::GDScript::706337157238673718::1792564434::0::1::::State<>Resource<><>0<>0<><>::
+StateMachine.gd::GDScript::1171268651582776362::1792564434::0::1::::StateMachine<>Node<><>0<>0<><>::

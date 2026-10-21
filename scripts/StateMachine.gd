@@ -13,6 +13,7 @@ func init(player_ref: CharacterBody2D) -> void:
 	states["jump"] = Jump.new()
 	states["attack"] = Attack.new()
 	states["hitstun"] = HitStun.new()
+	states["block"] = Block.new()
 
 	# Give every state a reference to the player
 	for state_key in states.keys():

@@ -43,3 +43,7 @@ func physics_update(delta: float) -> void:
 		attack_state.setup_attack("kick")
 		player.state_machine.change_state("attack")
 		return
+		
+	if Input.is_action_pressed("block"):
+		player.state_machine.change_state("block")
+		return

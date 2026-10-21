@@ -1,1 +1,8 @@
+res://scenes/game.tscn
+res://scripts/block.gd
+res://scripts/Idle.gd
+res://scripts/Move.gd
 res://scenes/Player.tscn
+res://scripts/StateMachine.gd
+res://scripts/Jump.gd
+res://scripts/Attack.gd
