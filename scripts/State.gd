@@ -2,6 +2,7 @@ class_name State
 extends Resource
 
 var player: CharacterBody2D
+var energyBall: Area2D
 
 # Called when the state becomes active
 func enter() -> void:

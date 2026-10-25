@@ -43,6 +43,42 @@ func physics_update(delta: float) -> void:
 		attack_state.setup_attack("kick")
 		player.state_machine.change_state("attack")
 		return
+		
+	# Light Punch (U key)
+	if Input.is_action_just_pressed("punch"):
+		var attack_state = player.state_machine.states["attack"] as Attack
+		attack_state.setup_attack("punch")
+		player.state_machine.change_state("attack")
+		return
+
+	# Heavy Punch (I key)
+	if Input.is_action_just_pressed("punch_heavy"):
+		var attack_state = player.state_machine.states["attack"] as Attack
+		attack_state.setup_attack("punch_heavy")
+		player.state_machine.change_state("attack")
+		return
+
+	# Light Kick (J key)
+	if Input.is_action_just_pressed("kick"):
+		var attack_state = player.state_machine.states["attack"] as Attack
+		attack_state.setup_attack("kick")
+		player.state_machine.change_state("attack")
+		return
+
+	# Heavy Kick (K key)
+	if Input.is_action_just_pressed("kick_heavy"):
+		var attack_state = player.state_machine.states["attack"] as Attack
+		attack_state.setup_attack("kick_heavy")
+		player.state_machine.change_state("attack")
+		return
+		
+	# Special_1 (O key)
+	if Input.is_action_just_pressed("special_1"):
+		var attack_state = player.state_machine.states["attack"] as Attack
+		attack_state.setup_attack("special_1")
+		player.state_machine.change_state("attack")
+		return
+		
 	if Input.is_action_pressed("block"):
 		player.state_machine.change_state("block")
 		return

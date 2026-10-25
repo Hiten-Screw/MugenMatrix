@@ -4,7 +4,7 @@ extends CharacterBody2D
 # --- CHARACTER CONFIGURATION (Customizable per fighter in the Inspector) ---
 @export var character_name: String = "Fighter"
 @export var speed: float = 61.0
-@export var jump_velocity: float = -700.0
+@export var jump_velocity: float = -490.0
 @export var gravity_scale: float = 1.0
 
 # References to nodes inside this specific character scene
@@ -19,6 +19,12 @@ func _ready() -> void:
 		gravity = 980.0
 	gravity *= gravity_scale
 	
+	# Hide energy ball on startup
+	var initial_ball = get_node_or_null("HandMarker/Area2D")
+	if initial_ball:
+		initial_ball.visible = false
+		initial_ball.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	# Initialize the FSM and pass a reference of this player to all states
 	state_machine.init(self)
 
@@ -31,9 +37,15 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	state_machine.physics_update(delta)
 	
-	# FACING DIRECTION CHECK:
-	# If moving right, face right (not flipped). If moving left, face left (flipped).
+	#FLIP
 	if velocity.x > 0:
 		animated_sprite.flip_h = false
+		var hand_marker = get_node_or_null("HandMarker")
+		if hand_marker and hand_marker.position.x < 0:
+			hand_marker.position.x = abs(hand_marker.position.x) # Move marker to front right
+
 	elif velocity.x < 0:
 		animated_sprite.flip_h = true
+		var hand_marker = get_node_or_null("HandMarker")
+		if hand_marker and hand_marker.position.x > 0:
+			hand_marker.position.x = -abs(hand_marker.position.x) # Mirror marker to front left
