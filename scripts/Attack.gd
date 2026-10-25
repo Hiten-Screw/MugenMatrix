@@ -7,7 +7,8 @@ var timer: float = 0.0
 var beam_spawned: bool = false # Tracks if the beam has appeared yet
 
 # References for Special Attack
-var beam_scene: PackedScene = preload("res://scenes/kame.tscn")
+var beam_scene_right: PackedScene = preload("res://scenes/kame.tscn")
+var beam_scene_left: PackedScene = preload("res://scenes/kame_l.tscn")
 
 # Combo tracking
 var combo_step: int = 1
@@ -118,10 +119,17 @@ func physics_update(delta: float) -> void:
 				_exit_to_movement()
 
 func spawn_beam() -> void:
-	if not beam_scene:
+	var is_facing_left = player.animated_sprite.flip_h
+	
+	# Pick the correct scene variant based on facing direction
+	var selected_scene = beam_scene_left if is_facing_left else beam_scene_right
+	if not selected_scene:
 		return
 		
-	var beam_instance = beam_scene.instantiate() as kame
+	var beam_instance = selected_scene.instantiate()
+	if not beam_instance:
+		return
+		
 	
 	# Add beam to the world/scene root so it isn't tied to player movement
 	player.get_parent().add_child(beam_instance)
@@ -129,10 +137,7 @@ func spawn_beam() -> void:
 	# Get HandMarker global position
 	var marker = player.get_node_or_null("HandMarker")
 	var spawn_pos = marker.global_position if marker else player.global_position
-	
-	# Determine facing direction
-	var is_facing_left = player.animated_sprite.flip_h
-	
+			
 	# Initialize beam position and facing direction
 	beam_instance.setup(spawn_pos, is_facing_left)
 			

@@ -1,8 +1,27 @@
-res://scenes/game.tscn
-res://scripts/block.gd
-res://scripts/Idle.gd
-res://scripts/Move.gd
-res://scenes/Player.tscn
-res://scripts/StateMachine.gd
-res://scripts/Jump.gd
-res://scripts/Attack.gd
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.page.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.sprite.translation
+res://assets/characters/uniform atlases centered/frames_manifest.group.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.occupied.translation
+res://assets/characters/uniform atlases centered/frames_manifest.image.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.hframes.translation
+res://assets/characters/uniform atlases centered/frames_manifest.width.translation
+res://assets/characters/uniform atlases centered/frames_manifest.height.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.vframes.translation
+res://assets/characters/uniform atlases centered/frames_manifest.axis.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.cell.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.godot.translation
+res://assets/characters/uniform atlases centered/frames_manifest.air.translation
+res://assets/characters/uniform atlases centered/frames_manifest.page.translation
+res://assets/characters/uniform atlases centered/frames_manifest.atlas.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.texture.translation
+res://assets/characters/uniform atlases centered/frames_manifest.column.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.horizontal.translation
+res://assets/characters/uniform atlases centered/frames_manifest.row.translation
+res://assets/characters/uniform atlases centered/atlas_pages_manifest.doubled.translation
+res://assets/characters/uniform atlases centered/frames_manifest.frame.translation
+res://assets/characters/uniform atlases centered/frames_manifest.godot.translation
+res://assets/characters/uniform atlases centered/frames_manifest.cell.translation
+res://assets/characters/uniform atlases centered/frames_manifest.sprite.translation
+res://assets/characters/uniform atlases centered/frames_manifest.shared.translation
+res://assets/characters/uniform atlases centered/frames_manifest.horizontal.translation

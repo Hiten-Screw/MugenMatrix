@@ -18,11 +18,11 @@ position = Vector2(18, -459)
 texture = ExtResource("1_yqjtg")
 
 [node name="Player" parent="." unique_id=1473732577 instance=ExtResource("1_uwrxv")]
-position = Vector2(-114, -176)
+position = Vector2(-165, -216)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1392281705]
-position = Vector2(106, -135)
-zoom = Vector2(1.75, 1.75)
+position = Vector2(140, -272)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="boundry" type="StaticBody2D" parent="." unique_id=1109553716]
