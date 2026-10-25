@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://br0jjnulk1ubf"
+
+[deps]
+
+files=["res://assets/characters/uniform atlases centered/atlas_pages_manifest.page.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.sprite.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.occupied.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.hframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.hframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.vframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.cell.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.cell.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.godot.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.godot.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.texture.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.horizontal.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.doubled.translation"]
+
+source_file="res://assets/characters/uniform atlases centered/atlas_pages_manifest.csv"
+dest_files=["res://assets/characters/uniform atlases centered/atlas_pages_manifest.page.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.sprite.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.occupied.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.hframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.hframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.vframes.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.cell.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.cell.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.godot.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.godot.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.atlas.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.texture.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.horizontal.translation", "res://assets/characters/uniform atlases centered/atlas_pages_manifest.doubled.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
