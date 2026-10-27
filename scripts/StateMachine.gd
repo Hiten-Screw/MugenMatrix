@@ -6,8 +6,7 @@ extends Node
 var current_state: State
 var states: Dictionary = {}
 
-func init(player_ref: CharacterBody2D) -> void:
-	# Register and instantiate your states here via code
+func init(player_ref: Player) -> void:
 	states["idle"] = Idle.new()
 	states["move"] = Move.new()
 	states["jump"] = Jump.new()
@@ -15,7 +14,6 @@ func init(player_ref: CharacterBody2D) -> void:
 	states["hitstun"] = HitStun.new()
 	states["block"] = Block.new()
 
-	# Give every state a reference to the player
 	for state_key in states.keys():
 		states[state_key].player = player_ref
 

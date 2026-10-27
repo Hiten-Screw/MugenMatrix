@@ -204,4 +204,3 @@ scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_jvbyd")
 animation = &"kame"
 autoplay = "kame"
-frame_progress = 0.13926445
