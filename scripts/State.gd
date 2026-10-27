@@ -1,23 +1,29 @@
 class_name State
 extends Resource
 
-var player: CharacterBody2D
+var player: Player
 var energyBall: Area2D
 
-# Called when the state becomes active
 func enter() -> void:
 	pass
-# Called when exiting the state
+
 func exit() -> void:
 	pass
 
-# Called every frame (_process)
 func update(_delta: float) -> void:
 	pass
-# Called every physics frame (_physics_process)
+
 func physics_update(_delta: float) -> void:
 	pass
 
-# Called when unhandled input events come in (great for jumps or attacks)
 func handle_input(_event: InputEvent) -> void:
 	pass
+
+func is_action_pressed(action: StringName) -> bool:
+	return Input.is_action_pressed(player.input_action(action))
+
+func is_action_just_pressed(action: StringName) -> bool:
+	return Input.is_action_just_pressed(player.input_action(action))
+
+func get_axis(negative_action: StringName, positive_action: StringName) -> float:
+	return Input.get_axis(player.input_action(negative_action), player.input_action(positive_action))

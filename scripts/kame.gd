@@ -2,7 +2,7 @@ class_name kame
 extends Area2D
 
 @export var damage_per_tick: float = 2.0
-@export var lifetime: float = 1.0 # How long the beam stays active
+@export var lifetime: float = 1.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -14,7 +14,6 @@ func setup(spawn_position: Vector2, is_facing_left: bool) -> void:
 	if is_facing_left:
 		direction = Vector2.LEFT
 		animated_sprite.flip_h = true
-		# Optional: If collision shape is used later
 		var col = get_node_or_null("CollisionShape2D")
 		if col:
 			col.position.x = -abs(col.position.x)
@@ -28,14 +27,12 @@ func setup(spawn_position: Vector2, is_facing_left: bool) -> void:
 func _ready() -> void:
 	animated_sprite.play("kame")
 	
-	# Connect overlap signals for hitting enemies
 	body_entered.connect(_on_body_entered)
 	
-	# Auto cleanup timer
 	get_tree().create_timer(lifetime).timeout.connect(queue_free)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player: 
+	if body is Player:
 		return
 		
 	if body.has_method("take_hit"):
