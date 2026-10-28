@@ -2,33 +2,38 @@
 
 [ext_resource type="PackedScene" uid="uid://hur4bl8fo3k7" path="res://scenes/Player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ynhce8ytnbsr" path="res://assets/background/1.webp" id="1_yqjtg"]
+[ext_resource type="Script" path="res://scripts/ArenaCamera.gd" id="3_arena_camera"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = -25.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
-distance = -951.0
+distance = -852.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
-distance = -1016.0
+distance = -917.0
 
 [node name="Game" type="Node2D" unique_id=945339433]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932931298]
-position = Vector2(18, -459)
+position = Vector2(11, -540)
 texture = ExtResource("1_yqjtg")
 
 [node name="Player1" parent="." unique_id=1473732577 instance=ExtResource("1_uwrxv")]
 position = Vector2(-165, -216)
-player_id = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player1" unique_id=1392281705]
-position = Vector2(140, -272)
-position_smoothing_enabled = true
+position = Vector2(161, -226)
+zoom = Vector2(1.2, 1.2)
+script = ExtResource("3_arena_camera")
+left_wall_path = NodePath("../../boundry/left_CollisionShape2D2")
+right_wall_path = NodePath("../../boundry/right_CollisionShape2D3")
 
 [node name="boundry" type="StaticBody2D" parent="." unique_id=1109553716]
 position = Vector2(-107, 0)
 
 [node name="ground_CollisionShape2D" type="CollisionShape2D" parent="boundry" unique_id=624973143]
+position = Vector2(50, -75)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="left_CollisionShape2D2" type="CollisionShape2D" parent="boundry" unique_id=781126968]
@@ -37,7 +42,6 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
 
 [node name="right_CollisionShape2D3" type="CollisionShape2D" parent="boundry" unique_id=1241397981]
-visible = false
 position = Vector2(90, 1)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_lnu2h")

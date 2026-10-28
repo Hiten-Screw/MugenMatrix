@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://qxmvg3xer1es" path="res://scripts/StateMachine.gd" id="1_mdl7e"]
 [ext_resource type="Script" uid="uid://bb6iger4l4lbn" path="res://scripts/Player.gd" id="1_qu4a1"]
-[ext_resource type="Texture2D" uid="uid://37kp7s2g22mr" path="res://assets/characters/uniform atlases centered/atlases/group_02120.png" id="2_d3wef"]
-[ext_resource type="Texture2D" uid="uid://cro6xw3ojkqgk" path="res://assets/characters/uniform atlases centered/atlases/group_02000_page_01.png" id="3_o4126"]
-[ext_resource type="Texture2D" uid="uid://b81qsmm36skjj" path="res://assets/characters/uniform atlases centered/atlases/group_02005_page_02.png" id="3_p7iby"]
-[ext_resource type="Texture2D" uid="uid://jssdejhvihwb" path="res://assets/characters/uniform atlases centered/atlases/group_02040.png" id="4_lkdrv"]
-[ext_resource type="Texture2D" uid="uid://mco680k8tuoc" path="res://assets/characters/uniform atlases centered/atlases/group_02950_page_02.png" id="5_p7iby"]
-[ext_resource type="Texture2D" uid="uid://bjev8gpgeh54w" path="res://assets/characters/uniform atlases centered/atlases/group_02950_page_03.png" id="6_0rnld"]
-[ext_resource type="Texture2D" uid="uid://dgx7af53yabyr" path="res://assets/characters/uniform atlases centered/atlases/group_02200_page_01.png" id="7_srp4u"]
-[ext_resource type="Texture2D" uid="uid://c5w4iqtpu56nv" path="res://assets/characters/uniform atlases centered/atlases/group_02600_page_01.png" id="8_jfpux"]
-[ext_resource type="Texture2D" uid="uid://dfv8ndokl5r1k" path="res://assets/characters/uniform atlases centered/atlases/group_02600_page_02.png" id="9_61ith"]
-[ext_resource type="Texture2D" uid="uid://bycrgve6jput5" path="res://assets/characters/uniform atlases centered/atlases/group_02020.png" id="10_ebwui"]
-[ext_resource type="Texture2D" uid="uid://bxpn1iablq7rr" path="res://assets/characters/uniform atlases centered/atlases/group_04000_page_01.png" id="10_o4126"]
+[ext_resource type="Texture2D" uid="uid://37kp7s2g22mr" path="res://assets/characters/goku/atlases/group_02120.png" id="2_d3wef"]
+[ext_resource type="Texture2D" uid="uid://cro6xw3ojkqgk" path="res://assets/characters/goku/atlases/group_02000_page_01.png" id="3_o4126"]
+[ext_resource type="Texture2D" uid="uid://b81qsmm36skjj" path="res://assets/characters/goku/atlases/group_02005_page_02.png" id="3_p7iby"]
+[ext_resource type="Texture2D" uid="uid://jssdejhvihwb" path="res://assets/characters/goku/atlases/group_02040.png" id="4_lkdrv"]
+[ext_resource type="Texture2D" uid="uid://mco680k8tuoc" path="res://assets/characters/goku/atlases/group_02950_page_02.png" id="5_p7iby"]
+[ext_resource type="Texture2D" uid="uid://bjev8gpgeh54w" path="res://assets/characters/goku/atlases/group_02950_page_03.png" id="6_0rnld"]
+[ext_resource type="Texture2D" uid="uid://dgx7af53yabyr" path="res://assets/characters/goku/atlases/group_02200_page_01.png" id="7_srp4u"]
+[ext_resource type="Texture2D" uid="uid://c5w4iqtpu56nv" path="res://assets/characters/goku/atlases/group_02600_page_01.png" id="8_jfpux"]
+[ext_resource type="Texture2D" uid="uid://dfv8ndokl5r1k" path="res://assets/characters/goku/atlases/group_02600_page_02.png" id="9_61ith"]
+[ext_resource type="Texture2D" uid="uid://bycrgve6jput5" path="res://assets/characters/goku/atlases/group_02020.png" id="10_ebwui"]
+[ext_resource type="Texture2D" uid="uid://bxpn1iablq7rr" path="res://assets/characters/goku/atlases/group_04000_page_01.png" id="10_o4126"]
 [ext_resource type="PackedScene" uid="uid://5sa2a20bdret" path="res://scenes/ball.tscn" id="13_lkdrv"]
 [ext_resource type="Script" uid="uid://ds0q32qcyicn" path="res://scripts/HitBox.gd" id="15_0rnld"]
 
@@ -512,7 +512,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ji43g"]
-size = Vector2(33, 90)
+size = Vector2(112, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7iby"]
 size = Vector2(175, 60)
@@ -1051,7 +1051,7 @@ _data = {
 radius = 13.0
 height = 102.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1473732577]
+[node name="Goku" type="CharacterBody2D" unique_id=1473732577]
 collision_layer = 32
 script = ExtResource("1_qu4a1")
 
