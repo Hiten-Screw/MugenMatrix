@@ -1,0 +1,376 @@
+[gd_scene format=3 uid="uid://cns3g21ahkuyr"]
+
+[ext_resource type="FontFile" uid="uid://dg325ldoqmtkc" path="res://assets/ui/mugen/fonts/tempestnarrow.ttf" id="1_font"]
+[ext_resource type="Texture2D" uid="uid://clccfhil8raa8" path="res://assets/ui/mugen/select_background.png" id="2_background"]
+[ext_resource type="Texture2D" uid="uid://cfnxslp27w0ai" path="res://assets/characters/goku/char/prof.jpeg" id="3_portrait"]
+[ext_resource type="Texture2D" uid="uid://bcc5yhggnjccf" path="res://assets/ui/mugen/select_portrait_frame_p1.png" id="4_frame_p1"]
+[ext_resource type="Texture2D" uid="uid://quuwrhd7auhd" path="res://assets/ui/mugen/select_portrait_frame_p2.png" id="5_frame_p2"]
+[ext_resource type="Texture2D" uid="uid://cnliqcwg82de5" path="res://assets/ui/mugen/select_title_00.png" id="6_title_00"]
+[ext_resource type="Texture2D" uid="uid://dj7h0c1fr5a40" path="res://assets/ui/mugen/select_title_01.png" id="7_title_01"]
+[ext_resource type="Texture2D" uid="uid://b708o5452gk8j" path="res://assets/ui/mugen/select_title_02.png" id="8_title_02"]
+[ext_resource type="Texture2D" uid="uid://c0ysvk3ojdjb2" path="res://assets/ui/mugen/select_title_03.png" id="9_title_03"]
+[ext_resource type="Texture2D" uid="uid://shgvu6tkbkhe" path="res://assets/ui/mugen/select_title_04.png" id="10_title_04"]
+[ext_resource type="Texture2D" uid="uid://dli1xgjeb7l50" path="res://assets/ui/mugen/select_title_05.png" id="11_title_05"]
+[ext_resource type="Texture2D" uid="uid://t3s0xl6g8s2l" path="res://assets/ui/mugen/select_title_06.png" id="12_title_06"]
+[ext_resource type="Texture2D" uid="uid://b13ls5njvafq6" path="res://assets/ui/mugen/select_title_07.png" id="13_title_07"]
+[ext_resource type="Texture2D" uid="uid://bf152ros3kasy" path="res://assets/ui/mugen/select_title_08.png" id="14_title_08"]
+[ext_resource type="Texture2D" uid="uid://t63gtuecggdu" path="res://assets/ui/mugen/select_title_09.png" id="15_title_09"]
+[ext_resource type="Texture2D" uid="uid://ccsgfc3iwxjwv" path="res://assets/ui/mugen/select_title_10.png" id="16_title_10"]
+[ext_resource type="Texture2D" uid="uid://cq2tbgfug7mhn" path="res://assets/ui/mugen/select_title_11.png" id="17_title_11"]
+[ext_resource type="Texture2D" uid="uid://d2act1pvqqeqp" path="res://assets/ui/mugen/select_title_12.png" id="18_title_12"]
+[ext_resource type="Texture2D" uid="uid://de1356ka3snhe" path="res://assets/ui/mugen/select_title_13.png" id="19_title_13"]
+[ext_resource type="Texture2D" uid="uid://b1x0sgurkas3j" path="res://assets/ui/mugen/select_title_14.png" id="20_title_14"]
+[ext_resource type="Texture2D" uid="uid://1gcuo3pwjpja" path="res://assets/ui/mugen/select_title_15.png" id="21_title_15"]
+[ext_resource type="Texture2D" uid="uid://dclr02pho3cyc" path="res://assets/ui/mugen/select_title_16.png" id="22_title_16"]
+[ext_resource type="Texture2D" uid="uid://b0fva8a5154p2" path="res://assets/ui/mugen/select_title_17.png" id="23_title_17"]
+
+[sub_resource type="Theme" id="Theme_screenpack"]
+default_font = ExtResource("1_font")
+default_font_size = 22
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_select_heading"]
+animations = [{
+"frames": [{
+"duration": 50.0,
+"texture": ExtResource("6_title_00")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_title_01")
+}, {
+"duration": 4.0,
+"texture": ExtResource("8_title_02")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_title_03")
+}, {
+"duration": 4.0,
+"texture": ExtResource("10_title_04")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_title_05")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_title_06")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_title_07")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_title_08")
+}, {
+"duration": 4.0,
+"texture": ExtResource("15_title_09")
+}, {
+"duration": 4.0,
+"texture": ExtResource("16_title_10")
+}, {
+"duration": 4.0,
+"texture": ExtResource("17_title_11")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_title_12")
+}, {
+"duration": 4.0,
+"texture": ExtResource("19_title_13")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_title_14")
+}, {
+"duration": 4.0,
+"texture": ExtResource("21_title_15")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_title_16")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_title_17")
+}, {
+"duration": 300.0,
+"texture": ExtResource("6_title_00")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_player_one"]
+bg_color = Color(0.0352941, 0.054902, 0.0941176, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.831373, 0.0980392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_player_two"]
+bg_color = Color(0.0352941, 0.054902, 0.0941176, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.101961, 0.909804, 0.898039, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="CharacterSelect" type="Control" unique_id=1545513357]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_screenpack")
+
+[node name="SelectBackground" type="TextureRect" parent="." unique_id=932704318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SelectShade" type="ColorRect" parent="." unique_id=1772732753]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.01, 0.015, 0.04, 0.55)
+
+[node name="SelectHeading" type="AnimatedSprite2D" parent="." unique_id=2032279379]
+position = Vector2(640, 66)
+sprite_frames = SubResource("SpriteFrames_select_heading")
+autoplay = "default"
+
+[node name="RosterNote" type="Label" parent="." unique_id=919198284]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 103.0
+offset_right = 1180.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(1, 0.831373, 0.0980392, 1)
+theme_override_font_sizes/font_size = 15
+text = "ONE WARRIOR AVAILABLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectRule" type="ColorRect" parent="." unique_id=421129067]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 143.0
+offset_right = 890.0
+offset_bottom = 145.0
+mouse_filter = 2
+color = Color(0.101961, 0.909804, 0.898039, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerOneCard" type="Panel" parent="." unique_id=470034147]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 171.0
+offset_right = 510.0
+offset_bottom = 562.0
+theme_override_styles/panel = SubResource("StyleBox_player_one")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerName" type="Label" parent="PlayerOneCard" unique_id=245241471]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 340.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(1, 0.831373, 0.0980392, 1)
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Portrait" type="TextureRect" parent="PlayerOneCard" unique_id=959066056]
+clip_contents = true
+layout_mode = 0
+offset_left = 82.0
+offset_top = 50.0
+offset_right = 278.0
+offset_bottom = 246.0
+mouse_filter = 2
+texture = ExtResource("3_portrait")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="PortraitFrame" type="TextureRect" parent="PlayerOneCard" unique_id=52651051]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 37.0
+offset_right = 292.0
+offset_bottom = 261.0
+mouse_filter = 2
+texture = ExtResource("4_frame_p1")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterName" type="Label" parent="PlayerOneCard" unique_id=2027340698]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 274.0
+offset_right = 340.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.94, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "GOKU"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ReadyStatus" type="Label" parent="PlayerOneCard" unique_id=1613549277]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 320.0
+offset_right = 340.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 1)
+theme_override_font_sizes/font_size = 15
+text = "PRESS U TO READY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerTwoCard" type="Panel" parent="." unique_id=1479311622]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 171.0
+offset_right = 1130.0
+offset_bottom = 562.0
+theme_override_styles/panel = SubResource("StyleBox_player_two")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerName" type="Label" parent="PlayerTwoCard" unique_id=490419166]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 340.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.101961, 0.909804, 0.898039, 1)
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Portrait" type="TextureRect" parent="PlayerTwoCard" unique_id=1088722827]
+clip_contents = true
+layout_mode = 0
+offset_left = 82.0
+offset_top = 50.0
+offset_right = 278.0
+offset_bottom = 246.0
+mouse_filter = 2
+texture = ExtResource("3_portrait")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="PortraitFrame" type="TextureRect" parent="PlayerTwoCard" unique_id=1388985193]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 37.0
+offset_right = 292.0
+offset_bottom = 261.0
+mouse_filter = 2
+texture = ExtResource("5_frame_p2")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterName" type="Label" parent="PlayerTwoCard" unique_id=169022482]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 274.0
+offset_right = 340.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.94, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "GOKU"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ReadyStatus" type="Label" parent="PlayerTwoCard" unique_id=1471793922]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 320.0
+offset_right = 340.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 1)
+theme_override_font_sizes/font_size = 15
+text = "PRESS 1 TO READY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Versus" type="Label" parent="." unique_id=77029905]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 325.0
+offset_right = 686.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.94, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "VS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerOneControls" type="Label" parent="." unique_id=1158472600]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 590.0
+offset_right = 615.0
+offset_bottom = 618.0
+theme_override_colors/font_color = Color(1, 0.831373, 0.0980392, 1)
+theme_override_font_sizes/font_size = 16
+text = "P1  MOVE: W A S D     READY: U"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerTwoControls" type="Label" parent="." unique_id=1307490520]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 590.0
+offset_right = 1165.0
+offset_bottom = 618.0
+theme_override_colors/font_color = Color(0.101961, 0.909804, 0.898039, 1)
+theme_override_font_sizes/font_size = 16
+text = "P2  MOVE: ARROWS     READY: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Instructions" type="Label" parent="." unique_id=977177358]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 645.0
+offset_right = 1000.0
+offset_bottom = 669.0
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 1)
+theme_override_font_sizes/font_size = 14
+text = "BOTH PLAYERS MUST CONFIRM TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
