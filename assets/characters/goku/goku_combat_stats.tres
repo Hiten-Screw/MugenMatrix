@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterCombatStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/CharacterCombatStats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+max_hp = 100.0
+max_sp = 100.0
+starting_sp = 0.0
+max_mp = 100.0
+mp_regen_per_second = 5.0
+sp_on_hit_dealt = 10.0
+sp_on_hit_received = 5.0

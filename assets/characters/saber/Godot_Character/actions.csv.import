@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cecv0tv4ds0oy"
+
+[deps]
+
+files=["res://assets/characters/saber/Godot_Character/actions.action.translation", "res://assets/characters/saber/Godot_Character/actions.canonical.translation", "res://assets/characters/saber/Godot_Character/actions.shared.translation", "res://assets/characters/saber/Godot_Character/actions.frame.translation", "res://assets/characters/saber/Godot_Character/actions.loop.translation", "res://assets/characters/saber/Godot_Character/actions.finite.translation", "res://assets/characters/saber/Godot_Character/actions.sheet.translation", "res://assets/characters/saber/Godot_Character/actions.cell.translation", "res://assets/characters/saber/Godot_Character/actions.cell.translation", "res://assets/characters/saber/Godot_Character/actions.columns.translation", "res://assets/characters/saber/Godot_Character/actions.rows.translation", "res://assets/characters/saber/Godot_Character/actions.center.translation", "res://assets/characters/saber/Godot_Character/actions.ground.translation"]
+
+source_file="res://assets/characters/saber/Godot_Character/actions.csv"
+dest_files=["res://assets/characters/saber/Godot_Character/actions.action.translation", "res://assets/characters/saber/Godot_Character/actions.canonical.translation", "res://assets/characters/saber/Godot_Character/actions.shared.translation", "res://assets/characters/saber/Godot_Character/actions.frame.translation", "res://assets/characters/saber/Godot_Character/actions.loop.translation", "res://assets/characters/saber/Godot_Character/actions.finite.translation", "res://assets/characters/saber/Godot_Character/actions.sheet.translation", "res://assets/characters/saber/Godot_Character/actions.cell.translation", "res://assets/characters/saber/Godot_Character/actions.cell.translation", "res://assets/characters/saber/Godot_Character/actions.columns.translation", "res://assets/characters/saber/Godot_Character/actions.rows.translation", "res://assets/characters/saber/Godot_Character/actions.center.translation", "res://assets/characters/saber/Godot_Character/actions.ground.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

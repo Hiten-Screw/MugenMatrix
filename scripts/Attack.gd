@@ -1,195 +1,169 @@
 class_name Attack
 extends State
 
-var current_attack: String = ""
-var attack_duration: float = 0.0
+var current_slot: StringName
+var current_definition: AttackDefinition
+var combo_index: int = 0
 var timer: float = 0.0
-var beam_spawned: bool = false
+var projectile_spawned: bool = false
+var buffered_combo: bool = false
+var dash_active: bool = false
+var dash_direction: float = 0.0
 
-var beam_scene_right: PackedScene = preload("res://scenes/kame.tscn")
-var beam_scene_left: PackedScene = preload("res://scenes/kame_l.tscn")
+func setup_attack(slot: StringName) -> bool:
+	if not player.attack_set:
+		push_error("%s has no character attack set assigned." % player.character_name)
+		return false
 
-var combo_step: int = 1
-var max_combo: int = 2
-var buffered_next_attack: bool = false
-var is_holding_attack: bool = false
+	var definition: AttackDefinition = player.attack_set.get_move(slot, 0)
+	if not definition:
+		push_error("%s has no move configured for attack slot '%s'." % [player.character_name, slot])
+		return false
+	if not player.try_pay_attack_cost(definition):
+		return false
 
-func setup_attack(attack_type: String) -> void:
-	current_attack = attack_type
-	combo_step = 1
-	buffered_next_attack = false
-	beam_spawned = false
-	_configure_attack_data()
+	if player.state_machine.current_state == self and current_definition:
+		player.on_character_attack_finished(current_definition)
 
-func _configure_attack_data() -> void:
-	var hitbox = player.get_node_or_null("HitBox") as Hitbox
-	var anim_player = player.get_node_or_null("AnimationPlayer")
+	current_slot = slot
+	current_definition = definition
+	combo_index = 0
+	timer = 0.0
+	projectile_spawned = false
+	buffered_combo = false
+	_configure_current_attack()
+	return true
+
+func _configure_current_attack() -> void:
+	current_definition = player.attack_set.get_move(current_slot, combo_index)
+	if not current_definition:
+		push_error("%s has no move configured for attack slot '%s'." % [player.character_name, current_slot])
+		return
+
+	var hitbox := player.get_node_or_null("HitBox") as Hitbox
 	if hitbox:
 		hitbox.begin_attack()
+		hitbox.damage = current_definition.damage * player.attack_set.damage_multiplier
+		hitbox.attack_type = String(current_definition.attack_type)
+		hitbox.attack_id = current_slot
+	player.active_attack_id = current_slot
 
-	if current_attack == "punch":
-		if combo_step == 1:
-			attack_duration = 0.625
-			_play_facing_attack_animation("punch_1")
-			if hitbox:
-				hitbox.damage = 7.0
-				hitbox.attack_type = "punch_1"
-		elif combo_step == 2:
-			attack_duration = 0.4
-			_play_facing_attack_animation("punch_2")
-			if hitbox:
-				hitbox.damage = 7.0
-				hitbox.attack_type = "punch_2"
+	var hitbox_node := player.get_node_or_null("HitBox") as Node2D
+	if hitbox_node:
+		hitbox_node.scale.x = -1.0 if current_definition.mirrors_hitbox_to_facing and player.animated_sprite.flip_h else 1.0
+	var hitbox_shape := player.get_node_or_null("HitBox/CollisionShape2D") as CollisionShape2D
+	if hitbox_shape and current_definition.enable_hitbox_on_start:
+		hitbox_shape.set_deferred("disabled", false)
 
-	elif current_attack == "punch_heavy":
-		attack_duration = 1.072
-		_play_facing_attack_animation("punch_heavy")
-		if hitbox:
-			hitbox.damage = 7.0
-			hitbox.attack_type = "punch_heavy"
+	if current_definition.animation_name != &"":
+		if player.animated_sprite.sprite_frames.has_animation(current_definition.animation_name):
+			player.animated_sprite.play(current_definition.animation_name)
+		else:
+			push_error("%s is missing sprite animation '%s'." % [player.character_name, current_definition.animation_name])
 
-	elif current_attack == "kick":
-		attack_duration = 0.6
-		_play_facing_attack_animation("kick")
-		if hitbox:
-			hitbox.damage = 7.0
-			hitbox.attack_type = "kick"
+	var animation_player := player.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if animation_player:
+		var animation_name := current_definition.animation_player_name
+		if player.animated_sprite.flip_h and current_definition.animation_player_left_name != &"":
+			animation_name = current_definition.animation_player_left_name
+		var explicitly_configured := animation_name != &""
+		if not explicitly_configured:
+			animation_name = current_definition.animation_name
+		if animation_name != &"" and animation_player.has_animation(animation_name):
+			animation_player.play(animation_name)
+		elif explicitly_configured:
+			push_error("%s is missing AnimationPlayer animation '%s'." % [player.character_name, animation_name])
 
-	elif current_attack == "kick_heavy":
-		attack_duration = 0.75
-		_play_facing_attack_animation("kick_heavy")
-		if hitbox:
-			hitbox.damage = 7.0
-			hitbox.attack_type = "kick_heavy"
-
-	elif current_attack == "special_1":
-		attack_duration = 2.875
-		beam_spawned = false
-		if hitbox:
-			hitbox.damage = 50.0
-			hitbox.attack_type = "special_1"
-
-		var energy_ball = player.get_node_or_null("HandMarker/Area2D")
-		if energy_ball:
-			energy_ball.visible = true
-			energy_ball.process_mode = Node.PROCESS_MODE_INHERIT
-			var ball_sprite = energy_ball.get_node_or_null("AnimatedSprite2D")
-			if ball_sprite:
-				ball_sprite.play("ball")
-
-		player.animated_sprite.play("special_1")
-		_set_hitbox_mirrored(false)
-		if anim_player:
-			if player.animated_sprite.flip_h and anim_player.has_animation("charge_l"):
-				anim_player.play("charge_l")
-			elif anim_player.has_animation("charge"):
-				anim_player.play("charge")
-
-func _play_facing_attack_animation(animation_name: String) -> void:
-	_set_hitbox_mirrored(true)
-	player.animated_sprite.play(animation_name)
-	var anim_player = player.get_node_or_null("AnimationPlayer")
-	if anim_player and anim_player.has_animation(animation_name):
-		anim_player.play(animation_name)
-
-func _set_hitbox_mirrored(mirror_to_facing: bool) -> void:
-	var hitbox = player.get_node_or_null("HitBox") as Node2D
-	if hitbox:
-		hitbox.scale.x = -1.0 if mirror_to_facing and player.animated_sprite.flip_h else 1.0
+	player.on_character_attack_started(current_definition)
 
 func enter() -> void:
 	timer = 0.0
-	player.velocity.x = 0 
-	buffered_next_attack = false
+	player.velocity.x = 0.0
+	buffered_combo = false
+
+func exit() -> void:
+	if current_definition:
+		player.on_character_attack_finished(current_definition)
+	if dash_active:
+		player.end_attack_dash()
+		dash_active = false
+		player.velocity.x = 0.0
+	var hitbox := player.get_node_or_null("HitBox") as Hitbox
+	if hitbox:
+		hitbox.end_attack()
+	var animation_player := player.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if animation_player:
+		animation_player.stop()
+	var hitbox_shape := player.get_node_or_null("HitBox/CollisionShape2D") as CollisionShape2D
+	if hitbox_shape:
+		hitbox_shape.set_deferred("disabled", true)
 
 func physics_update(delta: float) -> void:
+	if not current_definition:
+		_exit_to_movement()
+		return
+
+	var previous_timer := timer
 	timer += delta
-	
-	is_holding_attack = is_action_pressed("punch_1")
-	
-	if current_attack == "punch" and timer > (attack_duration * 0.5):
-		if is_action_just_pressed("punch_1"):
-			buffered_next_attack = true
-	
+
+	if current_definition.combo_input != &"" and timer > current_definition.duration * 0.5:
+		if is_action_just_pressed(current_definition.combo_input):
+			buffered_combo = true
+
+	if current_definition.cancel_input != &"" and timer > current_definition.cancel_after:
+		if is_action_just_pressed(current_definition.cancel_input):
+			if player.start_attack(current_definition.cancel_slot):
+				return
+
 	if not player.is_on_floor():
 		player.velocity.y += player.gravity * delta
+	_apply_attack_dash(previous_timer, delta)
 	player.move_and_slide()
 
-	if current_attack == "punch" and timer > 0.15:
-		if is_action_just_pressed("kick_1"):
-			setup_attack("kick")
-			timer = 0.0
-			
-	# Spawn the beam during the special attack's charge.
-	if current_attack == "special_1" and not beam_spawned and timer >= 1.725:
-		beam_spawned = true
-		spawn_beam()
-			
-	if timer >= attack_duration:
-		var should_continue = false
-		
-		if current_attack == "punch":
-			if buffered_next_attack or is_action_pressed("punch_1"):
-				combo_step += 1
-				if combo_step > max_combo:
-					combo_step = 1
-				should_continue = true
-		
-		if should_continue:
-			timer = 0.0
-			buffered_next_attack = false
-			_configure_attack_data()
-		else:
-			if current_attack == "special_1":
-				finish_special_attack()
-			else:
-				_exit_to_movement()
+	if current_definition.projectile_spawn_time >= 0.0 \
+	and not projectile_spawned \
+	and timer >= current_definition.projectile_spawn_time:
+		projectile_spawned = true
+		player.spawn_character_projectile(current_definition)
 
-func spawn_beam() -> void:
-	var is_facing_left = player.animated_sprite.flip_h
-	
-	var selected_scene = beam_scene_left if is_facing_left else beam_scene_right
-	if not selected_scene:
+	if timer < current_definition.duration:
 		return
-		
-	var beam_instance = selected_scene.instantiate()
-	if not beam_instance:
-		return
-		
-	
-	player.get_parent().add_child(beam_instance)
-	
-	var marker = player.get_node_or_null("HandMarker")
-	var spawn_pos = marker.global_position if marker else player.global_position
-			
-	beam_instance.setup(spawn_pos, is_facing_left)
-			
-func finish_special_attack() -> void:
-	var anim_player = player.get_node_or_null("AnimationPlayer")
-	var energy_ball = player.get_node_or_null("HandMarker/Area2D")
-	if energy_ball:
-		energy_ball.visible = false
-		energy_ball.process_mode = Node.PROCESS_MODE_DISABLED
-	if anim_player:
-		anim_player.stop()
-		var hitbox_shape = player.get_node_or_null("HitBox/CollisionShape2D")
-		if hitbox_shape:
-			hitbox_shape.disabled = true
+
+	var combo_size := player.attack_set.get_combo_size(current_slot)
+	if combo_size > 1 and current_definition.combo_input != &"":
+		if buffered_combo or is_action_pressed(current_definition.combo_input):
+			var next_combo_index := (combo_index + 1) % combo_size
+			var next_definition: AttackDefinition = player.attack_set.get_move(current_slot, next_combo_index)
+			if next_definition and player.try_pay_attack_cost(next_definition):
+				combo_index = next_combo_index
+				timer = 0.0
+				buffered_combo = false
+				_configure_current_attack()
+				return
 
 	_exit_to_movement()
 
+func _apply_attack_dash(previous_timer: float, delta: float) -> void:
+	var dash_end_time := current_definition.dash_start_time + current_definition.dash_duration
+	var dash_frame_start := maxf(previous_timer, current_definition.dash_start_time)
+	var dash_frame_end := minf(timer, dash_end_time)
+	var dash_time_this_frame := maxf(0.0, dash_frame_end - dash_frame_start)
+	if dash_time_this_frame > 0.0 and delta > 0.0:
+		if not dash_active:
+			dash_direction = player.begin_attack_dash()
+			dash_active = true
+		player.velocity.x = dash_direction * current_definition.dash_speed * (dash_time_this_frame / delta)
+	elif dash_active and previous_timer >= dash_end_time:
+		player.end_attack_dash()
+		dash_active = false
+		player.velocity.x = 0.0
+
 func _exit_to_movement() -> void:
-	var anim_player = player.get_node_or_null("AnimationPlayer")
-	if anim_player:
-		anim_player.stop()
-	var hitbox_shape = player.get_node_or_null("HitBox/CollisionShape2D")
-	if hitbox_shape:
-		hitbox_shape.disabled = true
 	if player.is_on_floor():
 		var input_dir := get_axis("move_left", "move_right")
-		if input_dir != 0:
+		if input_dir != 0.0:
 			player.state_machine.change_state("move")
 		else:
 			player.state_machine.change_state("idle")
 	else:
-			player.state_machine.change_state("jump")
+		player.state_machine.change_state("jump")

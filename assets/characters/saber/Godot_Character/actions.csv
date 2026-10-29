@@ -1,0 +1,118 @@
+action_id,action_name,canonical_action,shared_sheet,frame_count,loop_start_frame,finite_duration_ticks,sheet,cell_width,cell_height,columns,rows,center_x,ground_y
+0,Standing Animation,0,0,45,,280,0000_standing_animation.png,262,240,5,9,131,187
+1,Blank Anim,1,0,1,,0,0001_blank_anim.png,262,240,1,1,131,187
+5,Turning,5,0,3,,6,0005_turning.png,262,240,1,3,131,187
+6,Crouch Turning,6,0,3,,6,0006_crouch_turning.png,262,240,1,3,131,187
+10,Stand to crouch,10,0,2,,4,0010_stand_to_crouch.png,262,240,1,2,131,187
+11,Crouching animation,11,0,1,,1,0011_crouching_animation.png,262,240,1,1,131,187
+12,Crouch to Stand,12,0,2,,4,0012_crouch_to_stand.png,262,240,1,2,131,187
+20,Walking Forward,20,0,11,3,41,0020_walking_forward.png,262,240,1,11,131,187
+21,Walking Back,21,0,10,,30,0021_walking_back.png,262,240,2,5,131,187
+40,Jump start frame,40,0,1,,3,0040_jump_start_frame.png,262,240,1,1,131,187
+41,Starting Jumping up,41,0,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+42,Starting Jumping forwards,41,1,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+43,Starting Jumping backwards,41,1,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+47,Jump land animation,40,1,1,,3,0040_jump_start_frame.png,262,240,1,1,131,187
+51,Small Jump Up,41,1,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+52,Small Jump Fwd,41,1,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+53,Small Jump Back,41,1,5,3,21,0041_starting_jumping_up.png,262,240,1,5,131,187
+57,Small Jump Land,40,1,1,,3,0040_jump_start_frame.png,262,240,1,1,131,187
+100,Dash forwards,100,0,5,,15,0100_dash_forwards.png,262,240,1,5,131,187
+101,Dash Stop,101,0,1,,20,0101_dash_stop.png,262,240,1,1,131,187
+105,Hop backwards,105,0,3,,6,0105_hop_backwards.png,262,240,1,3,131,187
+106,Hop Land,106,0,1,,2,0106_hop_land.png,262,240,1,1,131,187
+170,Lose,170,0,2,,3,0170_lose.png,262,240,1,2,131,187
+181,Win,181,0,10,2,53,0181_win.png,262,240,2,5,131,187
+190,Intro,190,0,11,,41,0190_intro.png,262,240,1,11,131,187
+195,Taunt,195,0,8,,29,0195_taunt.png,262,240,2,4,131,187
+200,Stand Light Punch,200,0,5,,9,0200_stand_light_punch.png,262,240,1,5,131,187
+210,Stand Medium Punch,210,0,5,,14,0210_stand_medium_punch.png,262,240,1,5,131,187
+220,Stand Strong Punch,220,0,6,,22,0220_stand_strong_punch.png,262,240,2,3,131,187
+230,Standing Light Kick,230,0,5,,12,0230_standing_light_kick.png,262,240,1,5,131,187
+240,Standing Medium Kick,240,0,7,,22,0240_standing_medium_kick.png,262,240,1,7,131,187
+250,Standing Strong Kick,250,0,8,,22,0250_standing_strong_kick.png,262,240,2,4,131,187
+400,Crouching light punch,400,0,5,,12,0400_crouching_light_punch.png,262,240,1,5,131,187
+410,Crouch Medium Punch,410,0,5,,14,0410_crouch_medium_punch.png,262,240,1,5,131,187
+420,Crouch Strong Punch,420,0,5,,17,0420_crouch_strong_punch.png,262,240,1,5,131,187
+430,Crouching Light Kick,430,0,6,,15,0430_crouching_light_kick.png,262,240,2,3,131,187
+440,Crouch Medium Kick,440,0,5,,17,0440_crouch_medium_kick.png,262,240,1,5,131,187
+450,Crouching Strong Kick,450,0,6,,17,0450_crouching_strong_kick.png,262,240,2,3,131,187
+600,Jump light punch,600,0,7,5,16,0600_jump_light_punch.png,262,240,1,7,131,187
+610,Jump medium punch,610,0,7,5,24,0610_jump_medium_punch.png,262,240,1,7,131,187
+620,Jump strong punch,620,0,7,5,32,0620_jump_strong_punch.png,262,240,1,7,131,187
+630,Jump light kick,630,0,4,3,10,0630_jump_light_kick.png,262,240,2,2,131,187
+640,Jump medium kick,640,0,4,3,15,0640_jump_medium_kick.png,262,240,2,2,131,187
+650,Jump Strong Kick,650,0,6,4,28,0650_jump_strong_kick.png,262,240,2,3,131,187
+710,Rolling,710,0,6,,19,0710_rolling.png,262,240,2,3,131,187
+760,Parry High,760,0,4,,14,0760_parry_high.png,262,240,2,2,131,187
+761,Parry Low,761,0,4,,14,0761_parry_low.png,262,240,2,2,131,187
+762,Parry Air,762,0,3,,14,0762_parry_air.png,262,240,1,3,131,187
+763,Parry Air Fall,763,0,5,3,15,0763_parry_air_fall.png,262,240,1,5,131,187
+765,Parry High Clsn,1,1,1,,0,0001_blank_anim.png,262,240,1,1,131,187
+766,Parry Low Clsn,1,1,1,,0,0001_blank_anim.png,262,240,1,1,131,187
+767,Parry Air Clsn,1,1,1,,0,0001_blank_anim.png,262,240,1,1,131,187
+770,Edge Mode,770,0,3,,24,0770_edge_mode.png,262,240,1,3,131,187
+800,Throw Attempt,800,0,6,,18,0800_throw_attempt.png,262,240,2,3,131,187
+805,Switching Sides,805,0,3,,12,0805_switching_sides.png,262,240,1,3,131,187
+806,Target Switching,806,0,1,,0,0806_target_switching.png,262,240,1,1,131,187
+810,Throw,810,0,17,,41,0810_throw.png,262,240,1,17,131,187
+820,Throw (Target),820,0,20,,63,0820_throw_target.png,262,240,4,5,131,187
+1010,Brave Knight,1010,0,13,,30,1010_brave_knight.png,262,240,1,13,131,187
+1011,Double Slash,1011,0,16,,44,1011_double_slash.png,262,240,4,4,131,187
+1020,Moon Cutter,1020,0,9,8,34,1020_moon_cutter.png,262,240,3,3,131,187
+1050,Moon Slicer,1050,0,6,5,20,1050_moon_slicer.png,262,240,2,3,131,187
+2000,Double Cutter,2000,0,13,12,47,2000_double_cutter.png,262,240,1,13,131,187
+3000,Prana Burst,3000,0,27,,102,3000_prana_burst.png,262,240,3,9,131,187
+120,GUARDSTART (stand),120,0,1,,1,0120_guardstart_stand.png,262,240,1,1,131,187
+121,GUARDSTART (crouch),121,0,1,,1,0121_guardstart_crouch.png,262,240,1,1,131,187
+122,GUARDSTART (air),122,0,1,,1,0122_guardstart_air.png,262,240,1,1,131,187
+130,GUARD (stand),130,0,1,,0,0130_guard_stand.png,262,240,1,1,131,187
+131,GUARD (crouch),131,0,1,,0,0131_guard_crouch.png,262,240,1,1,131,187
+132,GUARD (air),132,0,1,,0,0132_guard_air.png,262,240,1,1,131,187
+140,GUARDEND (stand),140,0,1,,5,0140_guardend_stand.png,262,240,1,1,131,187
+141,GUARDEND (crouch),121,1,1,,1,0121_guardstart_crouch.png,262,240,1,1,131,187
+142,GUARDEND (air),122,1,1,,1,0122_guardstart_air.png,262,240,1,1,131,187
+150,Hit back while guarding (stand),150,0,4,,16,0150_hit_back_while_guarding_stand.png,262,240,2,2,131,187
+151,Hit back while guarding (crouch),131,1,1,,0,0131_guard_crouch.png,262,240,1,1,131,187
+152,Hit back while guarding (air),132,1,1,,0,0132_guard_air.png,262,240,1,1,131,187
+5000,Stand/Air Hit high (light),5000,0,2,,4,5000_stand_air_hit_high_light.png,262,240,1,2,131,187
+5001,Stand/Air Hit high (medium),5001,0,2,,6,5001_stand_air_hit_high_medium.png,262,240,1,2,131,187
+5002,Stand/Air Hit high (hard),5002,0,2,,10,5002_stand_air_hit_high_hard.png,262,240,1,2,131,187
+5005,Stand Recover high (light),806,1,1,,0,0806_target_switching.png,262,240,1,1,131,187
+5006,Stand Recover high (medium),5006,0,2,,4,5006_stand_recover_high_medium.png,262,240,1,2,131,187
+5007,Stand Recover high (hard),5007,0,3,,6,5007_stand_recover_high_hard.png,262,240,1,3,131,187
+5010,Stand/Air Hit low (light),5010,0,2,,4,5010_stand_air_hit_low_light.png,262,240,1,2,131,187
+5011,Stand/Air Hit low (medium),5011,0,2,,5,5011_stand_air_hit_low_medium.png,262,240,1,2,131,187
+5012,Stand/Air Hit low (hard),5012,0,2,,10,5012_stand_air_hit_low_hard.png,262,240,1,2,131,187
+5015,Stand Recover low (light),5015,0,1,,0,5015_stand_recover_low_light.png,262,240,1,1,131,187
+5016,Stand Recover low (medium),5016,0,2,,4,5016_stand_recover_low_medium.png,262,240,1,2,131,187
+5017,Stand Recover low (hard),5017,0,3,,6,5017_stand_recover_low_hard.png,262,240,1,3,131,187
+5020,Crouch Hit (light),5020,0,1,,4,5020_crouch_hit_light.png,262,240,1,1,131,187
+5021,Crouch Hit (medium),5021,0,2,,5,5021_crouch_hit_medium.png,262,240,1,2,131,187
+5022,Crouch Hit (hard),5022,0,2,,10,5022_crouch_hit_hard.png,262,240,1,2,131,187
+5025,Crouch Recover (light),5025,0,1,,0,5025_crouch_recover_light.png,262,240,1,1,131,187
+5026,Crouch Recover (medium),5026,0,2,,4,5026_crouch_recover_medium.png,262,240,1,2,131,187
+5027,Crouch Recover (hard),5027,0,3,,6,5027_crouch_recover_hard.png,262,240,1,3,131,187
+5030,Stand/Air Hit back,5030,0,1,,5,5030_stand_air_hit_back.png,262,240,1,1,131,187
+5035,Stand/Air Hit transition,5035,0,2,,11,5035_stand_air_hit_transition.png,262,240,1,2,131,187
+5040,Air Recover,5040,0,7,5,22,5040_air_recover.png,262,240,1,7,131,187
+5050,Air Fall (going up),5050,0,1,,5,5050_air_fall_going_up.png,262,240,1,1,131,187
+5051,"Air Fall (up-type, going up)",5051,0,2,,6,5051_air_fall_up_type_going_up.png,262,240,1,2,131,187
+5061,"Air Fall (up-type, coming down)",5061,0,7,,30,5061_air_fall_up_type_coming_down.png,262,240,1,7,131,187
+5070,Tripped,5070,0,3,,10,5070_tripped.png,262,240,1,3,131,187
+5080,LieDown Hit (stay down),5080,0,3,,8,5080_liedown_hit_stay_down.png,262,240,1,3,131,187
+5090,LieDown Hit (hit up into air),5090,0,1,,7,5090_liedown_hit_hit_up_into_air.png,262,240,1,1,131,187
+5100,Hit ground from fall,5100,0,1,,3,5100_hit_ground_from_fall.png,262,240,1,1,131,187
+5160,Bounce into air,5160,0,1,,0,5160_bounce_into_air.png,262,240,1,1,131,187
+5170,Hit ground from bounce,5100,1,1,,3,5100_hit_ground_from_fall.png,262,240,1,1,131,187
+5101,Hit ground from fall (up-type),5101,0,2,,6,5101_hit_ground_from_fall_up_type.png,262,240,1,2,131,187
+5110,LieDown,5110,0,1,,1,5110_liedown.png,262,240,1,1,131,187
+5120,Get up from LieDown,5120,0,4,,14,5120_get_up_from_liedown.png,262,240,2,2,131,187
+5150,LieDead animation,5150,0,1,,0,5150_liedead_animation.png,262,240,1,1,131,187
+5200,Fall-recovery near ground,5200,0,5,,20,5200_fall_recovery_near_ground.png,262,240,1,5,131,187
+5210,Fall-recovery in mid-air,5040,1,7,5,22,5040_air_recover.png,262,240,1,7,131,187
+5300,Dizzy,5300,0,4,,32,5300_dizzy.png,262,240,2,2,131,187
+5500,Continue?,5500,0,2,,3,5500_continue.png,262,240,1,2,131,187
+5940,Throw Esc,5940,0,3,,17,5940_throw_esc.png,262,240,1,3,131,187
+5945,Throw Esc From,5940,1,3,,17,5940_throw_esc.png,262,240,1,3,131,187
+5950,Cheese KO,5950,0,6,5,60,5950_cheese_ko.png,262,240,2,3,131,187

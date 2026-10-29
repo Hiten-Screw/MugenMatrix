@@ -1,8 +1,32 @@
 [gd_scene format=3 uid="uid://8x8k3ibre7mo"]
 
-[ext_resource type="PackedScene" uid="uid://hur4bl8fo3k7" path="res://scenes/Player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ynhce8ytnbsr" path="res://assets/background/1.webp" id="1_yqjtg"]
-[ext_resource type="Script" path="res://scripts/ArenaCamera.gd" id="3_arena_camera"]
+[ext_resource type="Texture2D" path="res://assets/characters/goku/char/prof.jpeg" id="2_goku_portrait"]
+[ext_resource type="Texture2D" path="res://assets/characters/saber/char/prof.png" id="3_saber_portrait"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="4_game"]
+[ext_resource type="Script" path="res://scripts/ArenaCamera.gd" id="5_camera"]
+
+[sub_resource type="StyleBoxFlat" id="HudPanelStyle"]
+bg_color = Color(0.04, 0.05, 0.08, 0.78)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="MeterBackground"]
+bg_color = Color(0.16, 0.17, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="HpMeterFill"]
+bg_color = Color(0.12, 0.78, 0.24, 1)
+
+[sub_resource type="StyleBoxFlat" id="SpMeterFill"]
+bg_color = Color(0.9, 0.14, 0.16, 1)
+
+[sub_resource type="StyleBoxFlat" id="MpMeterFill"]
+bg_color = Color(0.12, 0.42, 0.95, 1)
+
+[sub_resource type="StyleBoxFlat" id="ResultOverlayStyle"]
+bg_color = Color(0, 0, 0, 0.78)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -25.0
@@ -14,20 +38,11 @@ distance = -852.0
 distance = -917.0
 
 [node name="Game" type="Node2D" unique_id=945339433]
+script = ExtResource("4_game")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932931298]
 position = Vector2(11, -540)
 texture = ExtResource("1_yqjtg")
-
-[node name="Player1" parent="." unique_id=1473732577 instance=ExtResource("1_uwrxv")]
-position = Vector2(-165, -216)
-
-[node name="Camera2D" type="Camera2D" parent="Player1" unique_id=1392281705]
-position = Vector2(161, -226)
-zoom = Vector2(1.2, 1.2)
-script = ExtResource("3_arena_camera")
-left_wall_path = NodePath("../../boundry/left_CollisionShape2D2")
-right_wall_path = NodePath("../../boundry/right_CollisionShape2D3")
 
 [node name="boundry" type="StaticBody2D" parent="." unique_id=1109553716]
 position = Vector2(-107, 0)
@@ -46,6 +61,212 @@ position = Vector2(90, 1)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
-[node name="Player2" parent="." unique_id=781002994 instance=ExtResource("1_uwrxv")]
-position = Vector2(358, -18)
-player_id = 2
+[node name="MatchHUD" type="CanvasLayer" parent="."]
+
+[node name="MatchTimer" type="Label" parent="MatchHUD"]
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = 18.0
+offset_right = 70.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 36
+text = "01:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player1Card" type="Panel" parent="MatchHUD"]
+offset_left = 28.0
+offset_top = 18.0
+offset_right = 468.0
+offset_bottom = 134.0
+theme_override_styles/panel = SubResource("HudPanelStyle")
+
+[node name="Portrait" type="TextureRect" parent="MatchHUD/Player1Card"]
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 92.0
+texture = ExtResource("2_goku_portrait")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="MatchHUD/Player1Card"]
+offset_left = 102.0
+offset_top = 8.0
+offset_right = 420.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 20
+text = "PLAYER 1"
+vertical_alignment = 1
+
+[node name="HPBar" type="ProgressBar" parent="MatchHUD/Player1Card"]
+offset_left = 102.0
+offset_top = 42.0
+offset_right = 420.0
+offset_bottom = 64.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("HpMeterFill")
+show_percentage = false
+
+[node name="SPBar" type="ProgressBar" parent="MatchHUD/Player1Card"]
+visible = false
+offset_left = 102.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("SpMeterFill")
+show_percentage = false
+
+[node name="MPBar" type="ProgressBar" parent="MatchHUD/Player1Card"]
+visible = false
+offset_left = 102.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("MpMeterFill")
+show_percentage = true
+
+[node name="Player2Card" type="Panel" parent="MatchHUD"]
+offset_left = 812.0
+offset_top = 18.0
+offset_right = 1252.0
+offset_bottom = 134.0
+theme_override_styles/panel = SubResource("HudPanelStyle")
+
+[node name="Portrait" type="TextureRect" parent="MatchHUD/Player2Card"]
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 92.0
+texture = ExtResource("3_saber_portrait")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="MatchHUD/Player2Card"]
+offset_left = 102.0
+offset_top = 8.0
+offset_right = 420.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 20
+text = "PLAYER 2"
+vertical_alignment = 1
+
+[node name="HPBar" type="ProgressBar" parent="MatchHUD/Player2Card"]
+offset_left = 102.0
+offset_top = 42.0
+offset_right = 420.0
+offset_bottom = 64.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("HpMeterFill")
+show_percentage = false
+
+[node name="SPBar" type="ProgressBar" parent="MatchHUD/Player2Card"]
+visible = false
+offset_left = 102.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("SpMeterFill")
+show_percentage = false
+
+[node name="MPBar" type="ProgressBar" parent="MatchHUD/Player2Card"]
+visible = false
+offset_left = 102.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("MeterBackground")
+theme_override_styles/fill = SubResource("MpMeterFill")
+show_percentage = true
+
+[node name="MatchResult" type="CanvasLayer" parent="."]
+visible = false
+layer = 2
+
+[node name="Overlay" type="ColorRect" parent="MatchResult"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.78)
+
+[node name="ResultLabel" type="Label" parent="MatchResult"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "PLAYER 1 WINS\nMATCH OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RematchButton" type="Button" parent="MatchResult"]
+offset_left = 450.0
+offset_top = 420.0
+offset_right = 640.0
+offset_bottom = 478.0
+text = "REMATCH"
+
+[node name="MainMenuButton" type="Button" parent="MatchResult"]
+offset_left = 650.0
+offset_top = 420.0
+offset_right = 840.0
+offset_bottom = 478.0
+text = "MAIN MENU"
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+layer = 3
+
+[node name="Overlay" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.78)
+
+[node name="Title" type="Label" parent="PauseMenu"]
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 220.0
+offset_right = 240.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+offset_left = 450.0
+offset_top = 340.0
+offset_right = 830.0
+offset_bottom = 398.0
+text = "RESUME"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu"]
+offset_left = 450.0
+offset_top = 414.0
+offset_right = 830.0
+offset_bottom = 472.0
+text = "MAIN MENU"
+
+[node name="ArenaCamera" type="Camera2D" parent="."]
+process_mode = 1
+script = ExtResource("5_camera")
+player_one_path = NodePath("../Player1")
+player_two_path = NodePath("../Player2")
+left_wall_path = NodePath("../boundry/left_CollisionShape2D2")
+right_wall_path = NodePath("../boundry/right_CollisionShape2D3")
