@@ -1,7 +1,17 @@
 class_name Block
 extends State
 
+const HITSTUN_BLOCK_COUNT: int = 8
+const MITIGATION_LOSS_PER_BLOCK: float = 0.1
+
 var consecutive_blocks: int = 0
+var blocked_attack_count: int = 0
+var last_blocked_attack_id: StringName
+
+func reset_block_sequence() -> void:
+	consecutive_blocks = 0
+	blocked_attack_count = 0
+	last_blocked_attack_id = &""
 
 func enter() -> void:
 	player.animated_sprite.play("block")
@@ -25,26 +35,28 @@ func physics_update(delta: float) -> void:
 			player.state_machine.change_state("idle")
 		return
 
-func evaluate_incoming_attack(attack_type: String, raw_damage: float) -> float:
+func evaluate_incoming_attack(attack_type: String, raw_damage: float, attack_id: StringName) -> float:
 	if attack_type == "special":
-		# Special attacks bypass blocking.
-		consecutive_blocks = 0
-		player.state_machine.change_state("hitstun")
+		reset_block_sequence()
 		return raw_damage
 
-	var chip_multiplier: float = 0.2
+	var base_mitigation: float = 0.8
 	if attack_type == "heavy":
-		chip_multiplier = 0.4
+		base_mitigation = 0.6
 	elif attack_type == "light":
-		chip_multiplier = 0.1
+		base_mitigation = 0.9
 
-	consecutive_blocks += 1
-	if consecutive_blocks > 5:
-		consecutive_blocks = 0
-		player.state_machine.change_state("hitstun")
-		return raw_damage * 1.2
+	if attack_id == last_blocked_attack_id:
+		consecutive_blocks = 1
+	else:
+		consecutive_blocks += 1
+	last_blocked_attack_id = attack_id
 
-	return raw_damage * chip_multiplier
+	var mitigation := maxf(0.0, base_mitigation - blocked_attack_count * MITIGATION_LOSS_PER_BLOCK)
+	blocked_attack_count += 1
+	var damage_after_block := raw_damage * (1.0 - mitigation)
+	if consecutive_blocks >= HITSTUN_BLOCK_COUNT:
+		reset_block_sequence()
+		player.apply_hitstun()
 
-func exit() -> void:
-	consecutive_blocks = 0
+	return damage_after_block

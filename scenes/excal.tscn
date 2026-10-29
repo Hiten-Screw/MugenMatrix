@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://da24uc3r7fio"]
+
+[ext_resource type="Texture2D" uid="uid://kwdbvabedcqg" path="res://assets/characters/saber/Godot_Character/7000_excalibur.png" id="1_8bps5"]
+[ext_resource type="Script" path="res://scripts/Excal.gd" id="2_excal"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmmax"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(0, 0, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngtvf"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(706, 0, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6edf5"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(1412, 0, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnrff"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2118, 0, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oevpn"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2824, 0, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41041"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(0, 724, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwq4c"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(706, 724, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfg8m"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(1412, 724, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg1gp"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2118, 724, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2a7f"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2824, 724, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1ay5"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(0, 1448, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubsro"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(706, 1448, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0r1f"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(1412, 1448, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6u01"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2118, 1448, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjyvo"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2824, 1448, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvgpe"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(0, 2172, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eye87"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(706, 2172, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvv1c"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(1412, 2172, 706, 724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1qpc"]
+atlas = ExtResource("1_8bps5")
+region = Rect2(2118, 2172, 706, 724)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ax55v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmmax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngtvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6edf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnrff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oevpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41041")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwq4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfg8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg1gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2a7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1ay5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubsro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0r1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6u01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjyvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvgpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eye87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvv1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1qpc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="Excal" type="Area2D" unique_id=1408113173]
+script = ExtResource("2_excal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=183059503]
+position = Vector2(276.00003, 86)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_ax55v")

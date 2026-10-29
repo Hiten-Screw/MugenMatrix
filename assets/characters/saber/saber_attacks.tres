@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="CharacterAttackSet" format=3 uid="uid://rcwow8rjpp82"]
+
+[ext_resource type="Script" uid="uid://cthh01h8et40s" path="res://scripts/CharacterAttackSet.gd" id="1_set"]
+[ext_resource type="Script" uid="uid://ctt6oitm7je1q" path="res://scripts/AttackDefinition.gd" id="2_move"]
+
+[sub_resource type="Resource" id="StrongSlash"]
+script = ExtResource("2_move")
+move_id = &"slash_2"
+animation_name = &"slash_2"
+animation_player_name = &"slash_2"
+duration = 1.0
+damage = 20.0
+attack_type = &"heavy"
+enable_hitbox_on_start = true
+
+[sub_resource type="Resource" id="Slash3"]
+script = ExtResource("2_move")
+move_id = &"slash_3"
+animation_name = &"slash_3"
+animation_player_name = &"slash_3"
+duration = 1.0
+damage = 25.0
+attack_type = &"heavy"
+enable_hitbox_on_start = true
+cancel_input = &"kick_2"
+cancel_slot = &"heavy_kick"
+cancel_after = 0.1
+
+[sub_resource type="Resource" id="Slash2"]
+script = ExtResource("2_move")
+move_id = &"slash_1"
+animation_name = &"slash_1"
+animation_player_name = &"slash_1"
+duration = 0.6
+damage = 10.0
+enable_hitbox_on_start = true
+
+[sub_resource type="Resource" id="Slash1"]
+script = ExtResource("2_move")
+move_id = &"dash"
+animation_name = &"dash"
+attack_type = &"none"
+dash_duration = 0.5
+dash_speed = 300.0
+
+[sub_resource type="Resource" id="PranaBurst"]
+script = ExtResource("2_move")
+move_id = &"excalibur"
+animation_name = &"special_1"
+animation_player_name = &"special"
+duration = 2.0
+damage = 150.0
+cost_resource = 3
+cost = 30.0
+cooldown = 4.0
+attack_type = &"special"
+projectile_spawn_time = 0.3799999999999999
+
+[resource]
+script = ExtResource("1_set")
+light_punch_combo = Array[ExtResource("2_move")]([SubResource("Slash1")])
+light_kick = SubResource("Slash2")
+heavy_punch = SubResource("Slash3")
+heavy_kick = SubResource("StrongSlash")
+projectile = SubResource("PranaBurst")

@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="CharacterAttackSet" format=3 uid="uid://16hcluftdge7"]
+
+[ext_resource type="Script" uid="uid://cthh01h8et40s" path="res://scripts/CharacterAttackSet.gd" id="1_set"]
+[ext_resource type="Script" uid="uid://ctt6oitm7je1q" path="res://scripts/AttackDefinition.gd" id="2_move"]
+
+[sub_resource type="Resource" id="HeavyKick"]
+script = ExtResource("2_move")
+move_id = &"kick_heavy"
+animation_name = &"kick_heavy"
+duration = 0.75
+damage = 20.0
+attack_type = &"heavy"
+
+[sub_resource type="Resource" id="HeavyPunch"]
+script = ExtResource("2_move")
+move_id = &"punch_heavy"
+animation_name = &"punch_heavy"
+duration = 1.072
+damage = 30.0
+attack_type = &"heavy"
+cancel_input = &"kick_1"
+cancel_slot = &"light_kick"
+cancel_after = 0.1
+
+[sub_resource type="Resource" id="LightKick"]
+script = ExtResource("2_move")
+move_id = &"kick"
+animation_name = &"kick"
+duration = 0.6
+damage = 10.0
+
+[sub_resource type="Resource" id="LightPunch1"]
+script = ExtResource("2_move")
+move_id = &"punch_1"
+animation_name = &"punch_1"
+duration = 0.625
+damage = 5.0
+combo_input = &"punch_1"
+cancel_input = &"kick_1"
+cancel_slot = &"light_kick"
+cancel_after = 0.15
+
+[sub_resource type="Resource" id="LightPunch2"]
+script = ExtResource("2_move")
+move_id = &"punch_2"
+animation_name = &"punch_2"
+duration = 0.4
+damage = 10.0
+combo_input = &"punch_1"
+cancel_input = &"kick_1"
+cancel_slot = &"light_kick"
+cancel_after = 0.15
+
+[sub_resource type="Resource" id="Projectile"]
+script = ExtResource("2_move")
+move_id = &"special_1"
+animation_name = &"special_1"
+animation_player_name = &"charge"
+animation_player_left_name = &"charge_l"
+duration = 2.875
+damage = 100.0
+cost_resource = 2
+cost = 25.0
+cooldown = 3.0
+attack_type = &"special"
+mirrors_hitbox_to_facing = false
+projectile_spawn_time = 1.725
+
+[resource]
+script = ExtResource("1_set")
+light_punch_combo = Array[ExtResource("2_move")]([SubResource("LightPunch1"), SubResource("LightPunch2")])
+light_kick = SubResource("LightKick")
+heavy_punch = SubResource("HeavyPunch")
+heavy_kick = SubResource("HeavyKick")
+projectile = SubResource("Projectile")

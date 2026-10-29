@@ -4,11 +4,13 @@ extends Camera2D
 @export_range(0.1, 4.0, 0.05) var maximum_zoom_out := 0.7
 @export_range(0.0, 0.5, 0.01) var horizontal_margin := 0.1
 @export_range(0.1, 10.0, 0.1) var zoom_speed := 3.0
+@export_node_path("Player") var player_one_path: NodePath
+@export_node_path("Player") var player_two_path: NodePath
 @export_node_path("CollisionShape2D") var left_wall_path: NodePath
 @export_node_path("CollisionShape2D") var right_wall_path: NodePath
 
-@onready var _player_one: Player = get_parent() as Player
-@onready var _player_two: Player = get_node("../../Player2") as Player
+@onready var _player_one: Player = get_node_or_null(player_one_path) as Player
+@onready var _player_two: Player = get_node_or_null(player_two_path) as Player
 @onready var _left_wall: CollisionShape2D = get_node(left_wall_path) as CollisionShape2D
 @onready var _right_wall: CollisionShape2D = get_node(right_wall_path) as CollisionShape2D
 
@@ -19,6 +21,13 @@ func _ready() -> void:
 	limit_bottom = 0
 
 func _physics_process(delta: float) -> void:
+	if not _player_one:
+		_player_one = get_node_or_null(player_one_path) as Player
+	if not _player_two:
+		_player_two = get_node_or_null(player_two_path) as Player
+	if not _player_one or not _player_two:
+		return
+
 	var left_edge := _get_vertical_boundary_x(_left_wall)
 	var right_edge := _get_vertical_boundary_x(_right_wall)
 	if left_edge > right_edge:

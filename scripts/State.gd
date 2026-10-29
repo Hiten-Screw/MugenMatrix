@@ -2,7 +2,6 @@ class_name State
 extends Resource
 
 var player: Player
-var energyBall: Area2D
 
 func enter() -> void:
 	pass

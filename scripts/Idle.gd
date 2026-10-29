@@ -24,46 +24,7 @@ func physics_update(delta: float) -> void:
 		player.state_machine.change_state("move")
 		return
 
-	if is_action_just_pressed("punch_1"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("punch")
-		player.state_machine.change_state("attack")
-		return
-
-	if is_action_just_pressed("kick_1"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("kick")
-		player.state_machine.change_state("attack")
-		return
-		
-	if is_action_just_pressed("punch_1"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("punch")
-		player.state_machine.change_state("attack")
-		return
-
-	if is_action_just_pressed("punch_2"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("punch_heavy")
-		player.state_machine.change_state("attack")
-		return
-
-	if is_action_just_pressed("kick_1"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("kick")
-		player.state_machine.change_state("attack")
-		return
-
-	if is_action_just_pressed("kick_2"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("kick_heavy")
-		player.state_machine.change_state("attack")
-		return
-		
-	if is_action_just_pressed("special_1"):
-		var attack_state = player.state_machine.states["attack"] as Attack
-		attack_state.setup_attack("special_1")
-		player.state_machine.change_state("attack")
+	if player.try_start_attack():
 		return
 		
 	if is_action_pressed("block"):
